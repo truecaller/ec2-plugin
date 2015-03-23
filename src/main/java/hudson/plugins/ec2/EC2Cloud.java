@@ -485,6 +485,7 @@ public abstract class EC2Cloud extends Cloud {
                 config.setProxyPassword(proxyConfig.getPassword());
             }
         }
+        config.setSignerOverride("QueryStringSignerType");
         AmazonEC2 client = new AmazonEC2Client(credentialsProvider.getCredentials(), config);
         client.setEndpoint(endpoint.toString());
         return client;
